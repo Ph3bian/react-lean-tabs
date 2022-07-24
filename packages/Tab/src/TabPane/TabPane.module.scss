@@ -1,0 +1,22 @@
+.tab-pane {
+	list-style: none;
+
+	&--heading {
+		margin: 0px 20px 0px 0;
+		color: #666666;
+
+		&-active,
+		&:hover {
+			color: #000;
+		}
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	&--content {
+		position: absolute;
+		right: 0;
+		width: 100%;
+		padding-top: 20px;
+	}
+}
