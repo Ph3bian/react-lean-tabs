@@ -68,19 +68,8 @@ For react-lean-tab2
 </Tab>
 ```
 
-#### Uncontrolled
-
 ```tsx
-<Tab initialActive={0}>
-	<Tab.Pane title="A">...</Tab.Pane>
-	<Tab.Pane title="B">...</Tab.Pane>
-</Tab>
-```
-
-#### Controlled
-
-```tsx
-<Tab active={active} onActiveChange={onActiveChange}>
+<Tab onActiveChange={onActiveChange}>
 	<Tab.Pane title="A">...</Tab.Pane>
 	<Tab.Pane title="B">...</Tab.Pane>
 </Tab>

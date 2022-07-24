@@ -27,7 +27,6 @@ export const TabPane: FC<TabPaneProps> = ({
 			data-test={dataTest}
 			className={clsx(styles["tab-pane"], className)}
 			onClick={onClick}
-			role="listitem"
 			{...props}
 		>
 			<div

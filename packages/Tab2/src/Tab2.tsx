@@ -1,13 +1,21 @@
-import React,{ HTMLAttributes, FC, Children, useState, useCallback } from "react";
+import React, {
+	HTMLAttributes,
+	FC,
+	Children,
+	useState,
+	useCallback,
+	ReactElement
+} from "react";
 import clsx from "clsx";
 
-import { TabPane } from "./TabPane";
+import { TabPane, TabPaneProps } from "./TabPane";
 
 import styles from "./Tab2.module.scss";
 
 export interface TabProps extends HTMLAttributes<HTMLUListElement> {
 	dataTest?: string;
 	className?: string;
+	children: ReactElement<TabPaneProps>[];
 
 	onActiveChange?: (value: number) => void;
 }
@@ -17,15 +25,16 @@ export const wrongChildTypeError = (child: React.ReactElement) =>
 		typeof child.type !== "string" ? child.type.name : "components"
 	} /> with a <Tab.Pane>`;
 
-export const Tab2: FC<TabProps> & { Pane: typeof TabPane }  = ({
-	children,
-	className,
+export const Tab2: FC<TabProps> & { Pane: typeof TabPane } = ({
 	dataTest = "ds-tab",
 
+	children,
+	className,
 	onActiveChange,
 	...props
 }) => {
 	const [active, setActive] = useState<number>(0);
+
 	const handleClick = useCallback(
 		(active: number) => {
 			setActive(active);
@@ -38,7 +47,7 @@ export const Tab2: FC<TabProps> & { Pane: typeof TabPane }  = ({
 
 	return (
 		<ul
-		role="list"
+			role="list"
 			className={clsx(styles.tab, className)}
 			data-test={dataTest}
 			tabIndex={active ? 0 : -1}

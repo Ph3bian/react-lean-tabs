@@ -29,9 +29,10 @@ type UncontrolledProps = BaseProps & {
 	active?: never;
 	initialActive?: number;
 };
-export type Props = ControlledProps | UncontrolledProps;
 
+type Props = ControlledProps | UncontrolledProps;
 
+export type TabProps = FC<Props> & { Pane: typeof TabPane };
 
 export const wrongChildTypeError = (child: React.ReactElement) =>
 	`<Tab> component only accepts children of type <Tab.Pane>,try wrapping your <${
@@ -41,9 +42,10 @@ export const wrongChildTypeError = (child: React.ReactElement) =>
 export const wrongInitialActiveError =
 	"Out of bound: initialActive value should not exceed provided TabPanes";
 
-export const Tab: FC<Props> & { Pane: typeof TabPane } = ({
-	className,
+export const Tab: TabProps = ({
 	dataTest = "ds-tab",
+
+	className,
 	initialActive,
 	onActiveChange,
 	active,
@@ -56,8 +58,7 @@ export const Tab: FC<Props> & { Pane: typeof TabPane } = ({
 	);
 
 	const count = Children.count(children);
-	if (initialActive && initialActive > count)
-		throw new Error(wrongInitialActiveError);
+	if (activeValue > count) throw new Error(wrongInitialActiveError);
 
 	const handleClick = useCallback(
 		(active: number) => {
@@ -71,7 +72,6 @@ export const Tab: FC<Props> & { Pane: typeof TabPane } = ({
 
 	return (
 		<ul
-			role="list"
 			className={clsx(styles.tab, className)}
 			data-test={dataTest}
 			tabIndex={activeValue ? 0 : -1}
