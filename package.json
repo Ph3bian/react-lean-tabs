@@ -4,8 +4,5 @@
 	"devDependencies": {
 		"lerna": "^5.1.4",
 		"nx": "^14.4.1"
-	},
-	"scripts": {
-		"publish": "lerna run tsc && lerna publish"
 	}
 }

@@ -6,6 +6,7 @@
 		"build": "rm -rf dist && rollup --config",
 		"test": "jest"
 	},
+	"homepage": "https://github.com/monatheoctocat/my_package",
 	"dependencies": {
 		"@types/jest": "^28.1.6",
 		"@types/react": "^17.0.14",

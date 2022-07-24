@@ -1,6 +1,6 @@
-# Tabs
+# React Lean Tabs
 
-Tabs
+This contains unstyled react-tabs component
 
 ## API Props
 
