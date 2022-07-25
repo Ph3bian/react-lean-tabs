@@ -18,7 +18,7 @@ describe("<Tab/>", () => {
 		expect(await axe(container)).toHaveNoViolations();
 	});
 
-	it("fires `onTabChange` events", async () => {
+	it("should handle`onTabChange` event", async () => {
 		const mockOnTabChange = jest.fn();
 
 		render(
