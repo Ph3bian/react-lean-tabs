@@ -2,6 +2,7 @@
 	"name": "react-lean-tab",
 	"version": "1.0.0",
 	"main": "dist/index.js",
+	"license": "ISC",
 	"scripts": {
 		"build": "rm -rf dist && rollup --config",
 		"test": "jest"
@@ -44,5 +45,6 @@
 		"jest-axe": "^6.0.0",
 		"prop-types": "^15.8.1",
 		"webpack": "^5.73.0"
-	}
+	},
+	"gitHead": "db6b4823fc85761e8d8e9ee5fa6641b7735c86d8"
 }
