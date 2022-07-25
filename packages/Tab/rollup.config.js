@@ -1,4 +1,4 @@
-import sass from "rollup-plugin-sass";
+import postcss from "rollup-plugin-postcss";
 import typescript from "rollup-plugin-typescript2";
 
 export default {
@@ -11,6 +11,14 @@ export default {
 			exports: "named"
 		}
 	],
-	plugins: [sass({ insert: true }), typescript()],
+	plugins: [
+		postcss({
+			extract: false,
+			modules: true,
+			use: ["sass"]
+		}),
+		
+		typescript()
+	],
 	external: ["react"]
 };

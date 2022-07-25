@@ -1,12 +1,16 @@
 {
 	"compilerOptions": {
 		"jsx": "react-jsx",
-		"allowJs": true,
+		"allowJs": false,
 		"esModuleInterop": true,
-		"allowSyntheticDefaultImports": true
+		"allowSyntheticDefaultImports": true,
+		"outDir": "./build/types"
+
 	},
 	"files": [],
 	"include": ["./index.d.ts"],
+	"exclude": ["node_modules", "./build/**/*"],
+
 	"references": [
 		{
 			"path": "./tsconfig.lib.json"

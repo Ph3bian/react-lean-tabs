@@ -1,9 +1,11 @@
-.tab {
-		box-sizing: border-box;
-		display: flex;
-		align-items: flex-start;
-		position: relative;
-    padding: 0;
-		margin: 0;
-	}
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&display=swap");
 
+.tab {
+	font-family: "Crimson Text", serif;
+	box-sizing: border-box;
+	display: flex;
+	align-items: flex-start;
+	position: relative;
+	padding: 0;
+	margin: 0;
+}
