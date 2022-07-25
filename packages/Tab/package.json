@@ -1,6 +1,6 @@
 {
 	"name": "react-lean-tab",
-	"version": "1.0.1",
+	"version": "1.0.0",
 	"main": "dist/index.js",
 	"license": "ISC",
 	"scripts": {
