@@ -14,7 +14,6 @@ Tabs
 ```tsx
 <Tab>
 	<Tab.Pane title="First Pane">First Pane Body</Tab.Pane>
-
 	<Tab.Pane title="Second Pane">Second Pane Body</Tab.Pane>
 </Tab>
 ```

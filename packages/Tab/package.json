@@ -3,6 +3,7 @@
 	"version": "1.2.0",
 	"main": "dist/index.js",
 	"license": "MIT",
+	"author": "Phebian Chukwurah",
 	"scripts": {
 		"build": "rm -rf dist && rollup --config",
 		"test": "jest"
@@ -46,5 +47,5 @@
 		"prop-types": "^15.8.1",
 		"webpack": "^5.73.0"
 	},
-	"gitHead": "79e333873a7cfbec05bde66e1eee118f9472e6df"
+	"gitHead": "5b468d25002843d8be3097584cf9d4591cbcd3b2"
 }
