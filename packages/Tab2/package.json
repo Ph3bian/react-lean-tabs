@@ -1,6 +1,6 @@
 {
 	"name": "react-lean-tab2",
-	"version": "1.4.0-alpha.0",
+	"version": "1.4.1-alpha.0",
 	"main": "dist/index.js",
 	"author": "Phebian Chukwurah",
 	"scripts": {
