@@ -13,13 +13,12 @@ For react-lean-tab
 
 ### React-lean-tab: API Props
 
-| Syntax         | Type    | Description                                                                         |
-| -------------- | ------- | ----------------------------------------------------------------------------------- |
-| active         | number  | Title                                                                               |
-| onActiveChange | func    | Text                                                                                |
-| disabled       | boolean | If true, the component is disabled.                                                 |
-| initialValue   | number  | You can provide your own value. Otherwise, we fallback to the child position index. |
-| className      | string  | You can provide your own classes                                                    |
+| Syntax         | Type   | Description                                                                         |
+| -------------- | ------ | ----------------------------------------------------------------------------------- |
+| active         | number | Title                                                                               |
+| onActiveChange | func   | Text                                                                                |
+| initialValue   | number | You can provide your own value. Otherwise, we fallback to the child position index. |
+| className      | string | You can provide your own classes                                                    |
 
 #### Usage
 
