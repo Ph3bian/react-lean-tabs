@@ -8,7 +8,8 @@ export interface TabPaneProps extends HTMLAttributes<HTMLLIElement> {
 	dataTest?: string;
 	children: ReactNode;
 	className?: string;
-	active?: boolean;
+	contentClassName?: string;
+
 	title: string;
 	onClick?: () => void;
 }
@@ -18,7 +19,7 @@ export const TabPane: FC<TabPaneProps> = ({
 
 	title,
 	onClick,
-	active,
+	contentClassName,
 	className,
 	children,
 	...props
@@ -26,22 +27,22 @@ export const TabPane: FC<TabPaneProps> = ({
 	return (
 		<li
 			data-test={dataTest}
-			className={clsx(styles["tab-pane"], className)}
+			className={clsx(styles["tab-pane"])}
 			onClick={onClick}
-			role="listitem"
 			{...props}
 		>
 			<div
-				className={clsx(
-					styles["tab-pane--heading"],
-					active && styles["tab-pane--heading-active"]
-				)}
+				data-test={`${dataTest}-heading`}
+				className={clsx(styles["tab-pane--heading"], className)}
 			>
 				{title}
 			</div>
-			{active && (
-				<div className={styles["tab-pane--content"]}>{children}</div>
-			)}
+
+			<div
+				className={clsx(styles["tab-pane--content"], contentClassName)}
+			>
+				{children}
+			</div>
 		</li>
 	);
 };

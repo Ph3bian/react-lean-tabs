@@ -30,9 +30,7 @@ type UncontrolledProps = BaseProps & {
 	initialActive?: number;
 };
 
-type Props = ControlledProps | UncontrolledProps;
-
-export type TabProps = FC<Props> & { Pane: typeof TabPane };
+export type TabProps = ControlledProps | UncontrolledProps;
 
 export const wrongChildTypeError = (child: React.ReactElement) =>
 	`<Tab> component only accepts children of type <Tab.Pane>,try wrapping your <${
@@ -42,10 +40,10 @@ export const wrongChildTypeError = (child: React.ReactElement) =>
 export const wrongInitialActiveError =
 	"Out of bound: initialActive value should not exceed provided TabPanes";
 
-export const Tab: TabProps = ({
+export const Tab: FC<TabProps> & { Pane: typeof TabPane } = ({
 	dataTest = "ds-tab",
-
 	className,
+
 	initialActive,
 	onActiveChange,
 	active,

@@ -57,9 +57,10 @@ export const Tab2: FC<TabProps> & { Pane: typeof TabPane } = ({
 				if (React.isValidElement(child)) {
 					if (child.type === TabPane) {
 						return React.cloneElement(child, {
-							className: styles["tab-row"],
+							className:
+								active === index && styles["tab--active"],
+							contentClassName: active !== index && styles.hidden,
 							key: index,
-							active: active === index,
 							onClick: () => handleClick(index)
 						});
 					}

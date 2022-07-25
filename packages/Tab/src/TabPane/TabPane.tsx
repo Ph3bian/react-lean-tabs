@@ -30,6 +30,7 @@ export const TabPane: FC<TabPaneProps> = ({
 			{...props}
 		>
 			<div
+				data-test={`${dataTest}-heading`}
 				className={clsx(
 					styles["tab-pane--heading"],
 					active && styles["tab-pane--heading-active"]

@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { axe, toHaveNoViolations } from "jest-axe";
 import userEvent from "@testing-library/user-event";
 
-import Tab from "./Tab";
+import Tab, { TabProps } from "./Tab";
 
 describe("<Tab/>", () => {
 	expect.extend(toHaveNoViolations);
@@ -18,22 +18,38 @@ describe("<Tab/>", () => {
 		expect(await axe(container)).toHaveNoViolations();
 	});
 
-	it("fires `onTabChange` events", async () => {
-		const mockOnTabChange = jest.fn();
-
-		render(
-			<div>
-				<Tab onActiveChange={mockOnTabChange} active={0}>
+	describe("Controlled <Tab/>", () => {
+		const mockProps = {
+			onActiveChange: jest.fn(),
+			className: "tabs",
+			active: 0,
+			dataTest: "tabs"
+		};
+		const renderComponent = () =>
+			render(
+				<Tab {...mockProps}>
 					<Tab.Pane title="first">content first pane</Tab.Pane>
 					<Tab.Pane title="second">content second pane</Tab.Pane>
 					<Tab.Pane title="third">content third pane</Tab.Pane>
 				</Tab>
-			</div>
-		);
+			);
 
-		await userEvent.click(screen.getAllByRole("listitem")[1]);
-		
-		expect(mockOnTabChange).toHaveBeenCalled();
-	
+		it("should render successfully", async () => {
+			const { baseElement } = renderComponent();
+
+			expect(baseElement).toBeTruthy();
+		});
+		it("should handle `onActiveChange` event", async () => {
+			renderComponent();
+
+			await userEvent.click(screen.getAllByRole("listitem")[1]);
+
+			expect(mockProps.onActiveChange).toHaveBeenCalled();
+		});
+		it("should handle composing classNames", async () => {
+			renderComponent();
+
+			expect(screen.getByTestId("tabs")).toHaveClass(mockProps.className);
+		});
 	});
 });
