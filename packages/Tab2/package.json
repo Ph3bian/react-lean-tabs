@@ -6,7 +6,7 @@
 		"build": "rm -rf dist && rollup --config",
 		"test": "jest"
 	},
-	"license": "ISC",
+	"license": "MIT",
 	"dependencies": {
 		"@types/jest": "^28.1.6",
 		"@types/react": "^17.0.14",
@@ -45,5 +45,5 @@
 		"prop-types": "^15.8.1",
 		"webpack": "^5.73.0"
 	},
-	"gitHead": "469932784ac0cc621da2c477166a6b20173add17"
+	"gitHead": "79e333873a7cfbec05bde66e1eee118f9472e6df"
 }
